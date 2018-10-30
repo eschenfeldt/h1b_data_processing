@@ -79,7 +79,7 @@ class Summary:
             full_counter = self.data.soc_codes
             first_header = 'TOP_OCCUPATIONS'
         else:
-            raise ValueError(f'Unrecognized result type {result_type}')
+            raise ValueError('Unrecognized result type {}'.format(result_type))
         # Get total number of states
         total = sum(full_counter.values())
 
@@ -140,7 +140,7 @@ class Results:
 
             for name, count in self._top_ten:
                 percentage = (count / self._total) * 100
-                line = [name, str(count), f'{percentage:.1f}%']
+                line = [name, str(count), '{:.1f}%'.format(percentage)]
                 file.write(';'.join(line) + '\n')
 
 

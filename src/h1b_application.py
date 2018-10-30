@@ -79,7 +79,7 @@ class Application:
         if len(digits) < 6:
             return None
         else:
-            return f'{digits[:2]}-{digits[2:6]}'
+            return '{}-{}'.format(digits[:2], digits[2:6])
 
     def _clean_state(self, value):
         """

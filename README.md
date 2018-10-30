@@ -4,7 +4,7 @@ Given a semicolon separated file of data on H1B visa applications, generate list
 
 ## Approach
 
-I elected to use Python 3.6 for my solution to this problem. Several main pieces of the solution address different parts of the problem:
+I elected to use Python 3.5 for my solution to this problem. Several main pieces of the solution address different parts of the problem:
 
 ### Input format
 
@@ -24,7 +24,7 @@ In more detail, `Data` stores `collection.Counter` objects for states and SOC co
 
 ### Summarizing the data
 
-The `Summary` class in `src.process_data` also defines a `get_results` method that identifies the top ten in each category and sorts them, returning a `Results` object which defines the actual writing to output files. Because `collection.Counter` defines a `most_common` method that can be used to choose the top 10, most of the work in `get_results` is checking for possible ties with 10th place and sorting by name. SOC codes are converted to names by taking the most common name for a given code. Rounding and formatting of percentages is handled by f-string float formatting.
+The `Summary` class in `src.process_data` also defines a `get_results` method that identifies the top ten in each category and sorts them, returning a `Results` object which defines the actual writing to output files. Because `collection.Counter` defines a `most_common` method that can be used to choose the top 10, most of the work in `get_results` is checking for possible ties with 10th place and sorting by name. SOC codes are converted to names by taking the most common name for a given code. Rounding and formatting of percentages is handled by format string float formatting.
 
 ## Run instructions
 

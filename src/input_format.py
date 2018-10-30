@@ -59,7 +59,9 @@ class ColumnInfo:
                 indices.append(j)
 
         if not indices:
-            mes = f'No columns match for {known_names} or "{pattern}"'
+            mes = 'No columns match for {} or "{}"'.format(
+                self._known_names, self._pattern
+            )
             raise InputError(mes)
 
         self._indices = indices
