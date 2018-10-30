@@ -4,3 +4,6 @@
 # Large input files used for testing
 *giant_test.csv
 *H1B_FY*
+
+# Temporary files created by test suite
+insight_testsuite/temp*
