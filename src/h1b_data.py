@@ -25,16 +25,19 @@ class Data:
         Read one line of input data and update intermediate data.
         """
         app = h1b_application.Application(line, self.header_info)
-        if not (app.complete_data and app.certified):
+        if not app.certified:
             return
 
-        self.states[app.work_state] += 1
-        self.soc_codes[app.soc] += 1
+        if app.work_state is not None:
+            self.states[app.work_state] += 1
 
-        if app.soc in self.soc_names:
-            self.soc_names[app.soc][app.soc_name] += 1
-        else:
-            self.soc_names[app.soc] = Counter({app.soc_name: 1})
+        if app.soc is not None:
+            self.soc_codes[app.soc] += 1
+
+            if app.soc in self.soc_names:
+                self.soc_names[app.soc][app.soc_name] += 1
+            else:
+                self.soc_names[app.soc] = Counter({app.soc_name: 1})
 
     def process_chunk(self, filename, chunk_start, chunk_size):
         """

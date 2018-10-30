@@ -13,12 +13,6 @@ class Application:
         """This application was certified"""
         return self.status == 'CERTIFIED'
 
-    @property
-    def complete_data(self):
-        """This application contains all the relevant information."""
-        return not (self.status is None or self.work_state is None or
-                    self.soc is None)
-
     def __init__(self, raw_data, header_info):
         """Parse a row of the input CSV and store relevant information."""
         entries = raw_data.split(';')
