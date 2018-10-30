@@ -29,7 +29,13 @@ The `Summary` class in `src.process_data` also defines a `get_results` method th
 ## Run instructions
 
 The module `src.main` can be run with command line arguments for the input file, occupations output file, and states output file, in that order. The script `run.sh` demonstrates this with default input and output names, specifically as
-```python3 -m src.main ./input/h1b_input.csv ./output/top_10_occupations.txt ./output/top_10_states.txt
+
 ```
+python3 -m src.main ./input/h1b_input.csv ./output/top_10_occupations.txt ./output/top_10_states.txt
+```
+
 The `src` folder is a package to facilitate some unit tests, which can be run from the root directory via
-```python3 -m unittest discover```
+
+```
+python3 -m unittest discover
+```
