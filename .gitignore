@@ -1,3 +1,6 @@
 *.DS_Store
-
 */__pycache__/*
+
+# Large input files used for testing
+*giant_test.csv
+*H1B_FY*
