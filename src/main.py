@@ -15,7 +15,7 @@ def main(args):
     output_occupations = args[2]
     output_states = args[3]
 
-    print("Analyzing input_file file:")
+    print("Analyzing input file:")
     summary = process_data.Summary(input_file)
     print("Reading input data")
     summary.read_file()
